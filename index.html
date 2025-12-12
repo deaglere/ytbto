@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Bot Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">YTbto</div>
+    <nav class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#queue">Download Queue</a>
+      <a href="#editor">Edit Presets</a>
+      <a href="#history">History</a>
+    </nav>
+    <div class="status-chip">
+      <span class="dot"></span>
+      Bot Ready
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="overview" class="panel span-2">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">YouTube Download & Edit Bot</p>
+          <h1>Control dashboard</h1>
+        </div>
+        <button class="primary">Add Task</button>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <p class="label">Queued</p>
+          <p class="value">8</p>
+          <p class="hint">3 high priority</p>
+        </div>
+        <div class="stat-card">
+          <p class="label">Processing</p>
+          <p class="value">2</p>
+          <p class="hint">Avg. 01:32 per clip</p>
+        </div>
+        <div class="stat-card">
+          <p class="label">Completed today</p>
+          <p class="value">17</p>
+          <p class="hint">6 edits applied</p>
+        </div>
+        <div class="stat-card">
+          <p class="label">Storage used</p>
+          <p class="value">62%</p>
+          <p class="hint">124 GB of 200 GB</p>
+        </div>
+      </div>
+      <div class="workflow">
+        <div class="workflow-step">
+          <div class="step-icon">1</div>
+          <div>
+            <h3>Ingest</h3>
+            <p>Paste YouTube URLs or playlists. The bot validates access and schedules downloads.</p>
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-icon">2</div>
+          <div>
+            <h3>Edit</h3>
+            <p>Apply templates for trimming, intros, and auto-captions. Preview snippets before exporting.</p>
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-icon">3</div>
+          <div>
+            <h3>Deliver</h3>
+            <p>Push to shared storage or auto-upload to channels when approvals are granted.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="queue" class="panel">
+      <div class="panel-heading">
+        <h2>Download queue</h2>
+        <div class="controls">
+          <button class="ghost">Pause all</button>
+          <button class="primary">New URL</button>
+        </div>
+      </div>
+      <div class="table">
+        <div class="table-head">
+          <span>Video</span>
+          <span>Status</span>
+          <span>Quality</span>
+          <span>ETA</span>
+          <span>Actions</span>
+        </div>
+        <div class="table-row">
+          <span class="title">How to build a dashboard</span>
+          <span class="pill warn">Processing</span>
+          <span>1080p</span>
+          <span>01:10</span>
+          <span class="actions">
+            <button class="ghost">Prioritize</button>
+            <button class="ghost">Cancel</button>
+          </span>
+        </div>
+        <div class="table-row">
+          <span class="title">Automating edits with scripts</span>
+          <span class="pill success">Completed</span>
+          <span>4K</span>
+          <span>—</span>
+          <span class="actions">
+            <button class="ghost">Open</button>
+            <button class="ghost">Re-run</button>
+          </span>
+        </div>
+        <div class="table-row">
+          <span class="title">Playlist: Summer cinematics</span>
+          <span class="pill info">Queued</span>
+          <span>720p</span>
+          <span>04:35</span>
+          <span class="actions">
+            <button class="ghost">Prioritize</button>
+            <button class="ghost">Remove</button>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="editor" class="panel">
+      <div class="panel-heading">
+        <h2>Edit presets</h2>
+        <button class="primary">Create preset</button>
+      </div>
+      <div class="preset-grid">
+        <div class="preset-card">
+          <h3>Quick Trim</h3>
+          <p>Remove intro/outro and normalize audio levels.</p>
+          <div class="chips">
+            <span class="chip">-00:15 / +00:10</span>
+            <span class="chip">-3 dB</span>
+          </div>
+        </div>
+        <div class="preset-card">
+          <h3>Clip & Caption</h3>
+          <p>Create 60s clips with burned-in subtitles and a branded frame.</p>
+          <div class="chips">
+            <span class="chip">60s</span>
+            <span class="chip">Subtitles</span>
+          </div>
+        </div>
+        <div class="preset-card">
+          <h3>Longform Export</h3>
+          <p>Full-length render with custom thumbnail and chapter markers.</p>
+          <div class="chips">
+            <span class="chip">4K</span>
+            <span class="chip">Chapters</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="history" class="panel span-2">
+      <div class="panel-heading">
+        <div>
+          <h2>Recent activity</h2>
+          <p class="hint">Logs from the last 24 hours</p>
+        </div>
+        <div class="filters">
+          <button class="ghost">Today</button>
+          <button class="ghost">This week</button>
+          <button class="ghost">All</button>
+        </div>
+      </div>
+      <ul class="activity">
+        <li>
+          <span class="pill success">Complete</span>
+          <div>
+            <p class="title">Uploaded "Daily Highlights" to shared drive</p>
+            <p class="timestamp">12:45 UTC · Edit preset: Clip & Caption</p>
+          </div>
+        </li>
+        <li>
+          <span class="pill warn">Editing</span>
+          <div>
+            <p class="title">Applying Longform Export to "Full interview"</p>
+            <p class="timestamp">12:10 UTC · Rendering chapter markers</p>
+          </div>
+        </li>
+        <li>
+          <span class="pill info">Queued</span>
+          <div>
+            <p class="title">Playlist "Music reviews" added to queue</p>
+            <p class="timestamp">11:55 UTC · 14 items detected</p>
+          </div>
+        </li>
+        <li>
+          <span class="pill danger">Attention</span>
+          <div>
+            <p class="title">Storage threshold at 62%</p>
+            <p class="timestamp">11:20 UTC · Consider clearing old renders</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p class="eyebrow">Bot health</p>
+      <div class="health">
+        <span class="dot"></span>
+        Stable · Last sync 2m ago
+      </div>
+    </div>
+    <div class="toggles">
+      <label class="toggle">
+        <input type="checkbox" checked disabled />
+        <span>Auto-approve trusted channels</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" />
+        <span>Notify when queue is empty</span>
+      </label>
+    </div>
+  </footer>
+</body>
+</html>
